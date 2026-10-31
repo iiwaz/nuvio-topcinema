@@ -18,5 +18,6 @@
     "mp4"
   ],
   "limited": false,
-  "supportsExternalPlayer": true
+  "supportsExternalPlayer": true,
+  "hasSettings": true
 }
