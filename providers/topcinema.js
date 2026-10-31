@@ -72,14 +72,17 @@ function getMetadata(tmdbId, mediaType) {
   return __async(this, null, function* () {
     let key = "";
     try {
-      if (typeof TMDB_API_KEY !== "undefined") key = TMDB_API_KEY;
+      if (typeof globalThis !== "undefined") {
+        const settings = globalThis.SCRAPER_SETTINGS || {};
+        key = settings.tmdbApiKey || settings.apiKey || globalThis.TMDB_API_KEY || "";
+      }
     } catch (_) {
     }
     try {
-      if (!key && typeof globalThis !== "undefined") key = globalThis.TMDB_API_KEY || "";
+      if (!key && typeof TMDB_API_KEY !== "undefined") key = TMDB_API_KEY;
     } catch (_) {
     }
-    if (!key) throw new Error("TMDB API key is not exposed by this Nuvio runtime.");
+    if (!key) throw new Error("Add your TMDB API key in TopCinema provider settings.");
     const type = mediaType === "tv" ? "tv" : "movie";
     const url = "https://api.themoviedb.org/3/" + type + "/" + encodeURIComponent(String(tmdbId)) + "?api_key=" + encodeURIComponent(key) + "&language=en-US";
     const response = yield fetch(url, { headers: { "Accept": "application/json", "User-Agent": USER_AGENT } });
@@ -313,4 +316,19 @@ function getStreams(tmdbId, mediaType, season, episode) {
     }
   });
 }
-module.exports = { getStreams };
+function onSettings() {
+  return __async(this, null, function* () {
+    return [
+      { type: "header", label: "TMDB Configuration" },
+      {
+        type: "text",
+        key: "tmdbApiKey",
+        label: "TMDB API Key",
+        placeholder: "Enter your TMDB API key",
+        description: "Required to convert the TMDB ID into a title for TopCinema search.",
+        isPassword: true
+      }
+    ];
+  });
+}
+module.exports = { getStreams, onSettings };
