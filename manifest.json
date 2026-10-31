@@ -1,0 +1,32 @@
+{
+  "name": "Nuvio TopCinema",
+  "version": "1.0.0",
+  "description": "TopCinema provider for Nuvio",
+  "scrapers": [
+    {
+      "id": "topcinema",
+      "name": "TopCinema",
+      "description": "Searches TopCinema for movies and TV episodes and returns HLS/MP4 streams.",
+      "version": "1.0.0",
+      "author": "iiwaz",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/topcinema.js",
+      "enabled": true,
+      "logo": "",
+      "contentLanguage": [
+        "ar",
+        "en"
+      ],
+      "formats": [
+        "hls",
+        "mp4"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    }
+  ]
+}
