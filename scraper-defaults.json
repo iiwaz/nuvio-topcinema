@@ -1,0 +1,23 @@
+{
+  "name": "TopCinema",
+  "description": "Searches TopCinema for movies and TV episodes",
+  "version": "1.0.0",
+  "author": "iiwaz",
+  "supportedTypes": [
+    "movie",
+    "tv"
+  ],
+  "enabled": true,
+  "logo": "",
+  "contentLanguage": [
+    "ar",
+    "en"
+  ],
+  "formats": [
+    "hls",
+    "mp4"
+  ],
+  "limited": false,
+  "disabledPlatforms": [],
+  "supportsExternalPlayer": true
+}

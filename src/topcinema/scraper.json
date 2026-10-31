@@ -1,0 +1,22 @@
+{
+  "id": "topcinema",
+  "name": "TopCinema",
+  "description": "Searches TopCinema for movies and TV episodes and returns HLS/MP4 streams.",
+  "version": "1.0.0",
+  "author": "iiwaz",
+  "supportedTypes": [
+    "movie",
+    "tv"
+  ],
+  "enabled": true,
+  "contentLanguage": [
+    "ar",
+    "en"
+  ],
+  "formats": [
+    "hls",
+    "mp4"
+  ],
+  "limited": false,
+  "supportsExternalPlayer": true
+}
