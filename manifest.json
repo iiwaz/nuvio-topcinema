@@ -26,7 +26,8 @@
       ],
       "limited": false,
       "disabledPlatforms": [],
-      "supportsExternalPlayer": true
+      "supportsExternalPlayer": true,
+      "hasSettings": true
     }
   ]
 }
