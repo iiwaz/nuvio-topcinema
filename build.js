@@ -40,7 +40,8 @@ async function main() {
       formats: scraper.formats || ["hls", "mp4"],
       limited: !!scraper.limited,
       disabledPlatforms: scraper.disabledPlatforms || [],
-      supportsExternalPlayer: scraper.supportsExternalPlayer !== false
+      supportsExternalPlayer: scraper.supportsExternalPlayer !== false,
+      hasSettings: !!scraper.hasSettings
     }]
   };
 
